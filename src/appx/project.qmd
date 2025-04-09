@@ -1,0 +1,16 @@
+---
+title: "project"
+format: html
+---
+
+```{r}
+library(ggplot2)
+salary_potential <- read.csv("salary_potential.csv")
+```
+
+```{r}
+ggplot(salary_potential, aes(x = mid_career_pay, y = make_world_better_percent)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE)
+```
+
