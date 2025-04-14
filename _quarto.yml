@@ -37,6 +37,10 @@ book:
 
   chapters:
     - index.qmd
+    
+    - part: "Effective Teamwork"
+      chapters: 
+      - src/xavi-w.qmd
 
   appendices:
   - src/appx/proposal.qmd
