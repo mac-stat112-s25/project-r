@@ -41,10 +41,14 @@ book:
     - part: "Effective Teamwork"
       chapters: 
       - src/et/xavi-w.qmd
+      - src/et/laurice-j.qmd
+      - src/et/munya-m.qmd
 
     - part: "Exploratory Data Analysis"
       chapters: 
       - src/eda/xavi-w.qmd
+      - src/eda/laurice-j.qmd
+      - src/eda/munya-m.qmd
       
   appendices:
   - src/appx/proposal.qmd
