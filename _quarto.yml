@@ -40,8 +40,12 @@ book:
     
     - part: "Effective Teamwork"
       chapters: 
-      - src/xavi-w.qmd
+      - src/et/xavi-w.qmd
 
+    - part: "Exploratory Data Analysis"
+      chapters: 
+      - src/eda/xavi-w.qmd
+      
   appendices:
   - src/appx/proposal.qmd
   - src/appx/case-study.qmd
