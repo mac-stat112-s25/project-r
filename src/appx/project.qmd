@@ -9,8 +9,8 @@ salary_potential <- read.csv("salary_potential.csv")
 ```
 
 ```{r}
-ggplot(salary_potential, aes(x = mid_career_pay, y = make_world_better_percent)) +
-  geom_point() +
+ggplot(salary_potential, aes(x = mid_career_pay, y = make_world_better_percent, size = stem_percent)) +
+  geom_point(alpha = 0.5) +
   geom_smooth(method = "lm", se = TRUE)
 ```
 
