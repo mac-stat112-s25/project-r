@@ -4,9 +4,9 @@ title: "Proposal"
 
 Each team should submit a proposal for their project in the form of a rendered HTML Quarto page added as an appendix to their project website. The proposal should include the followings
 
-a title
-the names of the team members
-a short description of the project
-the reasons/inspirations behind choosing this project
-a rough implementation and responsibility plan, ie, what needs to be accomplished and who will do what when. Think about the list of deliverables when building the plan. The plan should be presented in a table format.
+Geography and its relation with Post-Graduate Success
+Xavi Wernli, Munya Masvaure, Laurice Jimu
+This project summarizes the relationship between geography (by U.S. state) and post-graduate success. Post-graduate success is comprised of both economic success (salary), and social success (personal fulfillment). The project is meant to highlight how geography influences both economic and social outcomes of graduates.
+We chose this projects because as university students concerned with our futures, we want to make sure we chose the right school to attend. 
+We just need to make a couple of graphs demonstrating the different relationships. This does also require producing summaries of each state for each variable, as currently the data is listed in universities. We will divy up the work load as we see fit.
 
