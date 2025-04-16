@@ -3,3 +3,75 @@ title: "munya-m"
 format: html
 ---
 
+## Research Question:
+How do early and mid-career pay levels vary across U.S. states, and what roles do STEM enrollment and alumni perception (making the world better) play in this variation?
+
+## Why this is important?
+Career Planning for Students:
+students can make informed decisions about which schools or states offer better long-term financial prospects Especially relevant for students deciding between STEM and non-STEM paths.
+
+Education Policy and Funding:
+It highlights states or institutions that produce high-earning graduates, which could inform public investment or scholarship programs.
+
+STEM and Social Impact Balance:
+It examines whether higher STEM enrollment aligns with better salary outcomes — and whether that comes at the expense of perceived social impact; promoting discussion on balancing career success with societal contributions.
+
+Economic Mobility and Equality:
+Understanding salary outcomes across states helps assess regional disparities in economic opportunity.It may inform state-level efforts to improve education outcomes and workforce development.
+
+
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(readr)
+```
+
+```{r}
+salary <- read_csv("../appx/salary_potential.csv")
+
+```
+
+
+
+```{r}
+# early career vs mid career pay
+ggplot(salary, aes(x = early_career_pay, y = mid_career_pay)) +
+  geom_point(alpha = 0.6, color = "#2a9d8f") +
+  labs(
+    title = "Early vs. Mid-Career Pay by School",
+    x = "Early Career Pay (USD)",
+    y = "Mid Career Pay (USD)") +
+  geom_smooth(method = lm, se= F, color= "red" )
+  theme_minimal()
+```
+
+
+```{r}
+# stem vs mid career pay
+ggplot(salary, aes(x = stem_percent, y = mid_career_pay)) +
+  geom_point(alpha = 0.6, color = "#e76f51") +
+  labs(
+    title = "STEM Enrollment vs. Mid-Career Pay",
+    x = "Percent in STEM",
+    y = "Mid Career Pay (USD)") +
+  geom_smooth(method = lm, se= F, color= "red" ) +
+  theme_minimal()
+
+```
+
+```{r}
+# state and early career pay
+ggplot(salary, aes(x = reorder(state_name, early_career_pay, median), y = early_career_pay)) +
+  geom_boxplot(fill = "#264653") +
+  labs(
+    title = "Early Career Pay by State",
+    x = "State",
+    y = "Early Career Pay (USD)"
+  ) +
+  coord_flip() +
+  theme_minimal()
+
+```
+
