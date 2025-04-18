@@ -6,21 +6,30 @@ format: html
 ```{r}
 library(ggplot2)
 library(ggiraph)
+library(dplyr)
+library(shiny)
 salary_potential <- read.csv("salary_potential.csv")
 regions <- read.csv("states.csv")
 ```
 
 ```{r}
+regions <- regions %>%
+  rename(state_name = State)
 
+rsp <- salary_potential %>% 
+full_join(regions, by = "state_name")
 ```
 
 ```{r}
+#| fig-height: 15
+#| fig-width: 10
 
-p <- ggplot(salary_potential, aes(x = mid_career_pay, y = make_world_better_percent, size = stem_percent)) +
-geom_point_interactive(aes(tooltip = paste("College:", name, "<br>State:", state_name, "Stem Percentage:", stem_percent)), alpha = 0.5, color = "grey") +
-theme_minimal()
+p <- ggplot(rsp, aes(x = mid_career_pay, y = make_world_better_percent, color = Division)) +
+  geom_point_interactive(aes(tooltip = paste("College:", name, "<br>State:", state_name, "<br>Stem   Percentage:", stem_percent)), alpha = 0.5) +
+  theme_minimal() +
+  facet_wrap(~Division) +
+  geom_smooth(method = "lm")
 
 girafe(ggobj = p)
-
 ```
 
