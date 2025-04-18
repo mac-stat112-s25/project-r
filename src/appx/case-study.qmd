@@ -2,4 +2,4 @@
 title: "Case Study"
 ---
 
-Your case study will go here.
+The article studies the effects of Uber on taxicabs in NYC. The data finds that the amount of rides is not increasing; rather Uber is taking riders away from taxis. This replacement is especially significant in Manhattan, where Uber has taken over 4 million rides away from taxis.
