@@ -37,6 +37,7 @@ book:
 
   chapters:
     - index.qmd
+    - project.qmd
     
     - part: "Effective Teamwork"
       chapters: 
