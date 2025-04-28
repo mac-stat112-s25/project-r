@@ -11,7 +11,7 @@ project:
 
 
 book:
-  title: "project title"
+  title: "Measuring Postgraduate Success"
   author: ["Munyaradzi Masvaure", "Laurice Jimu", "Xavi Wernli"]
   date: today  # use today to update date published based on last time project was edited
   date-format: full
@@ -37,7 +37,6 @@ book:
 
   chapters:
     - index.qmd
-    - project.qmd
     
     - part: "Effective Teamwork"
       chapters: 
