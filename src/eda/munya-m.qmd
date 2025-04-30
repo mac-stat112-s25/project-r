@@ -72,6 +72,5 @@ ggplot(salary, aes(x = reorder(state_name, early_career_pay, median), y = early_
   ) +
   coord_flip() +
   theme_minimal()
-
 ```
 
