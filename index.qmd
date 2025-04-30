@@ -25,25 +25,35 @@ full_join(regions, by = "state_name")
 ```
 
 ```{r}
-#| fig-height: 15
+#| fig-height: 5
 #| fig-width: 10
 
 q <- ggplot(rsp, aes(x = mid_career_pay, y = make_world_better_percent)) +
   geom_point_interactive(aes(tooltip = paste("College:", name, "<br>State:", state_name, "<br>Stem   Percentage:", stem_percent)), alpha = 0.5) +
   theme_minimal() +
-  geom_smooth(method = "lm")
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Mid-career pay vs. Percentage who make the world better",
+    x = "Mid-career pay",
+    y = "Percentage of graduates who self-report feeling their job makes the world a better place"
+  )
 
 girafe(ggobj = q)
 ```
 
 ```{r}
-#| fig-height: 15
+#| fig-height: 5
 #| fig-width: 10
 
 q <- ggplot(rsp, aes(x = mid_career_pay, y = make_world_better_percent, size = stem_percent)) +
   geom_point_interactive(aes(tooltip = paste("College:", name, "<br>State:", state_name, "<br>Stem   Percentage:", stem_percent)), alpha = 0.5) +
   theme_minimal() +
-  geom_smooth(method = "lm")
+  geom_smooth(method = "lm") +
+    labs(
+    title = "Mid-career pay vs. Percentage who make the world better, including stem percentage",
+    x = "Mid-career pay",
+    y = "Percentage of graduates who self-report feeling their job makes the world a better place"
+  )
 
 girafe(ggobj = q)
 ```
@@ -60,36 +70,51 @@ rsp_cat <- rsp %>%
 ```
 
 ```{r}
-#| fig-height: 15
+#| fig-height: 5
 #| fig-width: 10
 
 p <- ggplot(rsp, aes(x = mid_career_pay, y = make_world_better_percent, color = Division)) +
   geom_point_interactive(aes(tooltip = paste("College:", name, "<br>State:", state_name, "<br>Stem   Percentage:", stem_percent)), alpha = 0.5) +
   theme_minimal() +
   facet_wrap(~Division) +
-  geom_smooth(method = "lm")
+  geom_smooth(method = "lm") +
+    labs(
+    title = "Mid-career pay vs. Percentage who make the world better, including division",
+    x = "Mid-career pay",
+    y = "Percentage of graduates who self-report feeling their job makes the world a better place"
+  )
 
 girafe(ggobj = p)
 ```
 ```{r}
-#| fig-height: 15
+#| fig-height: 5
 #| fig-width: 10
 
 c <- ggplot(rsp_cat, aes(x = mid_career_pay, y = make_world_better_percent, color = category)) +
   geom_point_interactive(aes(tooltip = paste("College:", name, "<br>State:", state_name, "<br>Stem   Percentage:", stem_percent)), alpha = 0.5) +
-  theme_minimal()
+  theme_minimal() +
+    labs(
+    title = "Mid-career pay vs. Percentage who make the world better by category",
+    x = "Mid-career pay",
+    y = "Percentage of graduates who self-report feeling their job makes the world a better place"
+  )
   
 girafe(ggobj = c)
 ```
 ```{r}
-#| fig-height: 15
+#| fig-height: 5
 #| fig-width: 10
 
 s <- ggplot(rsp_cat, aes(x = mid_career_pay, y = make_world_better_percent, size = stem_percent, color = category)) +
   geom_point_interactive(aes(tooltip = paste("College:", name, "<br>State:", state_name, "<br>Stem   Percentage:", stem_percent)), alpha = 0.5) +
   theme_minimal() +
   facet_wrap(~category) +
-  geom_smooth(method = "lm")
+  geom_smooth(method = "lm") +
+    labs(
+    title = "Mid-career pay vs. Percentage who make the world better, by category",
+    x = "Mid-career pay",
+    y = "Percentage of graduates who self-report feeling their job makes the world a better place"
+  )
 
 girafe(ggobj = s)
 ```
