@@ -1,5 +1,5 @@
 ---
-title: "xavi-w"
+title: "Xavi W. Effective Teamwork"
 format: html
 ---
 
@@ -13,4 +13,6 @@ Here are some key tips to have effective teamwork.
 3. Its important to build mutual respect, and trust. This can help with conflict resolution.
 
 4. Leadership is also important, because you can provide support and be empathetic.
+
+Source: https://www.aces.edu/blog/topics/finance-career/10-tips-for-effective-teamwork-in-the-workplace/
 

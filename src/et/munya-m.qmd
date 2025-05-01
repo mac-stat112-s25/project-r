@@ -1,5 +1,5 @@
 ---
-title: "munya-m"
+title: "Munya M. Effective Teamwork"
 format: html
 ---
 
@@ -18,3 +18,5 @@ Being able to address disagreements constructively and find solutions together i
 
 >Positive Attitude:
 A positive and supportive team environment promotes collaboration and motivation. 
+
+Source: https://www.aces.edu/blog/topics/finance-career/10-tips-for-effective-teamwork-in-the-workplace/

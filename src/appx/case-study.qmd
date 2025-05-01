@@ -3,3 +3,7 @@ title: "Case Study"
 ---
 
 The article studies the effects of Uber on taxicabs in NYC. The data finds that the amount of rides is not increasing; rather Uber is taking riders away from taxis. This replacement is especially significant in Manhattan, where Uber has taken over 4 million rides away from taxis.
+
+This case study make a couple of very nice graphs describing how Uber has taken ridership from taxis overtime, partially driven by the pandemic.
+
+Source: https://fivethirtyeight.com/features/uber-is-taking-millions-of-manhattan-rides-away-from-taxis/

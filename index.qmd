@@ -2,11 +2,15 @@
 title: "Project"
 format: html
 execute: 
-  echo: true      # change to true to show the code
-code-fold: false  # change to true to fold the code chunks
+  code-fold: false
+  echo: false
+  error: false
+  warning: false
+  message: false
 ---
 
-```{r}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 library(ggplot2)
 library(ggiraph)
 library(dplyr)
@@ -23,7 +27,7 @@ regions <- regions %>%
 rsp <- salary_potential %>% 
 full_join(regions, by = "state_name")
 ```
-
+**General scatter plot**
 ```{r}
 #| fig-height: 5
 #| fig-width: 10
@@ -41,6 +45,9 @@ q <- ggplot(rsp, aes(x = mid_career_pay, y = make_world_better_percent)) +
 girafe(ggobj = q)
 ```
 
+This first graph shows how as the mid-career pay of graduates increase, they tend to feel less personal success. However, as income get very high, the amount of personal success felt by graduates appears to increase. This is likely due to the decreased number of data points at that income.
+
+**Scatter plot including stem percentage**
 ```{r}
 #| fig-height: 5
 #| fig-width: 10
@@ -58,6 +65,8 @@ q <- ggplot(rsp, aes(x = mid_career_pay, y = make_world_better_percent, size = s
 girafe(ggobj = q)
 ```
 
+This next graph demonstrates that jobs in stem tend to make more money than non-stem jobs, however not necessarily an increased or decreased amount of personal success.
+
 ```{r}
 rsp_cat <- rsp %>% 
   mutate(category = case_when(
@@ -68,7 +77,7 @@ rsp_cat <- rsp %>%
     TRUE ~ "Other"
   ))
 ```
-
+**Faceted scatter plot by region**
 ```{r}
 #| fig-height: 5
 #| fig-width: 10
@@ -86,6 +95,10 @@ p <- ggplot(rsp, aes(x = mid_career_pay, y = make_world_better_percent, color = 
 
 girafe(ggobj = p)
 ```
+
+This graph shows that personal and financial success varies a lot by region. This is partly due to some areas generally having higher incomes, leading to more income variability. Due to there often being less data points, it is difficult to see the trend in personal success, as some regions have very few higher income graduates.
+
+**Scatter plot by school category**
 ```{r}
 #| fig-height: 5
 #| fig-width: 10
@@ -101,6 +114,10 @@ c <- ggplot(rsp_cat, aes(x = mid_career_pay, y = make_world_better_percent, colo
   
 girafe(ggobj = c)
 ```
+
+This graph shows the relationship between school category and success. One very clear trend is the group of medical schools at the top middle of the screen. These schools don't necessarily have a super high income, but have very high levels of personal success.
+
+**Faceted scatter plot by school category**
 ```{r}
 #| fig-height: 5
 #| fig-width: 10
@@ -118,3 +135,34 @@ s <- ggplot(rsp_cat, aes(x = mid_career_pay, y = make_world_better_percent, size
 
 girafe(ggobj = s)
 ```
+  
+  This is a faceted version of the previous graph, which makes it easier to see specific groups. 
+  Notably, religious institutions tend to not have very high postgraduate financial success, and there is a very visible decrease in the personal success as financial success increases. 
+  The military schools are also very interesting, because they consist of schools with high stem percentages, a relatively high income, and between 60% - 70% personal success. 
+  Tech schools have the biggest income range, however the amount of personal success felt by graduates doesn't appear to change with income. This is possibly due to regional differences in incomes, as graduates fill the same employment positions but in different regions.
+```{r}
+tech <- rsp_cat %>% 
+  filter(category == "Tech")
+```
+
+**Scatter plot of tech schools**
+```{r}
+t <- ggplot(tech, aes(x = mid_career_pay, y = make_world_better_percent, size = stem_percent, color = Division)) +
+  geom_point_interactive(aes(tooltip = paste("College:", name, "<br>State:", state_name, "<br>Region:", Division)), alpha = 0.5) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", aes(group = 1)) +
+  labs(
+    title = "Mid-career pay vs. Percentage who make the world better, only tech schools",
+    x = "Mid-career pay",
+    y = "Percentage of graduates who self-report feeling their job makes the world a better place"
+  )
+girafe(ggobj = t)
+```
+
+To look into the idea of tech not changing depending on income can certainly be seen in this graph here. While it may look like several schools in the middle of the income range are more personally successful, this likely isn't significant due to these schools only ranging ~15% from the linear regression. Regionally, some regions do have more higher income schools, such as New England and the Pacific, and other regions like West South Central make up most of the lower income schools. While this matches the hypothesis made earlier, these results likely aren't statistically significant, because of the low amount of data points.
+
+To conclude, there is a relationship between personal success and financially success, with higher financial success generally leading to decreasing personal success. However, there are a variety of factors relating to this, not just geography like was hypothesized in our project proposal. These factors include, stem percentage, category of school, and of course geography. 
+
+Some limitations of this project were a lack of other variables, as well as sloppy categorization. As categories were made from buzzwords within the name of schools, some schools which could qualify as a certain category were not categorized.
+
+Some future directions for this research would be to include school size, school prestige, and percentage of graduate vs. undergraduate students.

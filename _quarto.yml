@@ -29,7 +29,7 @@ book:
 
 
   sidebar:
-    title: "sidebar title"
+    title: "Measuring Postgraduate Success"
     collapse-level: 2
     style: "docked"
     pinned: true
@@ -44,7 +44,7 @@ book:
       - src/et/laurice-j.qmd
       - src/et/munya-m.qmd
 
-    - part: "Exploratory Data Analysis"
+    - part: "EPA"
       chapters: 
       - src/eda/xavi-w.qmd
       - src/eda/laurice-j.qmd

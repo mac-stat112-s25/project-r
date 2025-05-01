@@ -1,5 +1,5 @@
 ---
-title: "laurice-j"
+title: "Laurice J. Effective Teamwork"
 format: html
 ---
 
@@ -38,3 +38,4 @@ While the leader may make the final call if needed, the team works together to f
 Good teams handle conflicts quickly and in a healthy way.
 People are open and honest, which helps solve issues without drama.
 
+Source: https://davidburkus.com/2023/12/6-tips-for-effective-teamwork/#:~:text=Set%20Clear%20Goals,to%20guide%20your%20team's%20journey.

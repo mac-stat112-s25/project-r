@@ -1,6 +1,12 @@
 ---
-title: "xavi-w"
+title: "Xavi W. EDA"
 format: html
+execute: 
+  code-fold: false
+  echo: false
+  error: false
+  warning: false
+  message: false
 ---
 
 Research Question: What is the effect of state on post graduate success?
@@ -10,7 +16,8 @@ Research Question: What is the effect of state on post graduate success?
 
 These questions should help answer the question of whether certain states have a relationship with higher post graduate success. Success is measured in two ways, economic: salary potential, and social: personal fulfillment.
 
-```{r}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 library(DataExplorer)
 library(ggplot2)
 salary_potential <- read.csv("salary_potential.csv")

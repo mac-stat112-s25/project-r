@@ -1,6 +1,12 @@
 ---
-title: "munya-m"
+title: "Munya M. EDA"
 format: html
+execute: 
+  code-fold: false
+  echo: false
+  error: false
+  warning: false
+  message: false
 ---
 
 ## Research Question:
@@ -29,13 +35,14 @@ library(readr)
 ```
 
 ```{r}
-salary <- read_csv("../appx/salary_potential.csv")
+salary <- read_csv("salary_potential.csv")
 
 ```
 
 
 
-```{r}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 # early career vs mid career pay
 ggplot(salary, aes(x = early_career_pay, y = mid_career_pay)) +
   geom_point(alpha = 0.6, color = "#2a9d8f") +
