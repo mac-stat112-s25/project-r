@@ -11,8 +11,8 @@ project:
 
 
 book:
-  title: "project title"
-  author: ["student 1 first and last name", "student 2 first and last name", "student 3 first and last name"]
+  title: "Measuring Postgraduate Success"
+  author: ["Munyaradzi Masvaure", "Laurice Jimu", "Xavi Wernli"]
   date: today  # use today to update date published based on last time project was edited
   date-format: full
   # favicon: images/logo.png
@@ -29,7 +29,7 @@ book:
 
 
   sidebar:
-    title: "sidebar title"
+    title: "Measuring Postgraduate Success"
     collapse-level: 2
     style: "docked"
     pinned: true
@@ -37,7 +37,19 @@ book:
 
   chapters:
     - index.qmd
+    
+    - part: "Effective Teamwork"
+      chapters: 
+      - src/et/xavi-w.qmd
+      - src/et/laurice-j.qmd
+      - src/et/munya-m.qmd
 
+    - part: "EPA"
+      chapters: 
+      - src/eda/xavi-w.qmd
+      - src/eda/laurice-j.qmd
+      - src/eda/munya-m.qmd
+      
   appendices:
   - src/appx/proposal.qmd
   - src/appx/case-study.qmd
