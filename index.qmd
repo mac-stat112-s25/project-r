@@ -8,6 +8,14 @@ execute:
   warning: false
   message: false
 ---
+Measuring Postgraduate Success, by Xavi Wernli, Munya Masvaure, and Laurice Jimu.
+Link to presentation slides: https://docs.google.com/presentation/d/1bwKRb_46IZ1M0plZareMSoo_621B3abiz2UghWiyz5g/edit?usp=sharing
+Link to presentation video: https://drive.google.com/file/d/1OgBqoxMqjv8b96oMTSazWFif5Lxv3k4-/view?usp=sharing
+
+We did this project to try and better understand the relationship between economic and personal success.
+While the original research question asked how success relates to geography, it quickly became more about the difference between the two successes.
+We categorize economic success as the average middle career income of graduates at a specific university, while personal success is the percentage of graduates who feel their job makes the world a better place.
+All of the data was sourced from Kaggle, though two datasets had to be combined for this data. In addition, to understand the relationship between success and school category, the category variable was created.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
