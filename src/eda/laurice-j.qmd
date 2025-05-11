@@ -1,0 +1,12 @@
+---
+title: "Laurice J. EDA"
+format: html
+execute: 
+  code-fold: false
+  echo: false
+  error: false
+  warning: false
+  message: false
+---
+
+Research Question: What is the effect on religion on post graduate success. 
